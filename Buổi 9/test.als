@@ -20,4 +20,4 @@ fact R1 {
 fact crossRead {
 	some u: User, d: Doc | d in u.reads and d.dept not in u.depts
 }
-run {} for 3
+run {} for 3 

@@ -11,4 +11,4 @@ assert OwnerOnlyCross {
 	all u: User, d: u.reads | d.dept not in u.depts
 	implies d.owner = u
 }
-check OwnerOnlyCross for 5
+check OwnerOnlyCross for 5 
