@@ -1,0 +1,14 @@
+MODULE main
+VAR st : {RED, GREEN, YELLOW};
+ASSIGN
+  init(st) := RED;
+  next(st) := case
+    st = RED : GREEN;
+    st = GREEN : YELLOW;
+    st = YELLOW : {RED, GREEN};
+  esac;
+DEFINE g := st = GREEN; r := st = RED; y := st = YELLOW;
+LTLSPEC G !(g & r)
+LTLSPEC G (y -> X r)
+LTLSPEC G F g
+LTLSPEC G F r
